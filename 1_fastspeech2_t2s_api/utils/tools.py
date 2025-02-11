@@ -302,7 +302,7 @@ def count_phones_from_biaobei(biaobei_text, dict_json):
         for i, line in enumerate(f):
             if i % 2 == 0:
                 text = line.strip().split('\t')[1]
-                t_list = re.split(r'#\d', text)
+                t_list = re.split(r'#|\d+', text)
                 t_list = [re.sub(r'\W', '', t) for t in t_list]
             if i % 2 == 1:
                 phones = line.strip().split('\t')[0].split(' ')
